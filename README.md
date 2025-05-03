@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 Chatbot Template with Next.js and OpenAI
 
-## Getting Started
+Una plantilla moderna y fácil de usar para crear tu propio chatbot utilizando Next.js 14, OpenAI y Bun.
 
-First, run the development server:
+## ✨ Características
 
+- 🚀 Next.js 15 con App Router
+- 💬 Integración con OpenAI API
+- 🎨 UI moderna con Tailwind CSS y Shadcn/ui
+- 🔄 Gestión de estado con React Query
+- ⚡ Bun como gestor de paquetes y runtime
+- 🌐 API Routes para comunicación segura
+- 📱 Diseño responsivo
+
+## 📁 Estructura del Proyecto
+
+```
+├── app/                  # Directorio principal de Next.js
+│   ├── api/             # API routes
+│   └── page.tsx         # Página principal
+├── components/          # Componentes React
+│   ├── chat-assistant/  # Componentes del chatbot
+│   └── ui/             # Componentes de UI reutilizables
+├── config/             # Configuración de OpenAI
+├── hooks/              # Custom hooks
+└── providers/          # Providers de la aplicación
+```
+
+## 🚀 Comenzando
+
+### Prerrequisitos
+
+- [Bun](https://bun.sh/) instalado en tu sistema
+- Una [API Key de OpenAI](https://platform.openai.com/api-keys)
+- [Node.js](https://nodejs.org/) (versión 18 o superior)
+
+### Instalación
+
+1. Clona el repositorio:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+git clone [url-del-repositorio]
+cd chatbot-template
+```
+
+2. Instala las dependencias:
+```bash
+bun install
+```
+
+3. Configura las variables de entorno:
+   - Crea un archivo `.env.local` en la raíz del proyecto
+   - Añade tu API key de OpenAI:
+```env
+OPENAI_API_KEY=tu-api-key-aquí
+```
+
+4. Inicia el servidor de desarrollo:
+```bash
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Abre [http://localhost:3000](http://localhost:3000) en tu navegador
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Configuración
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### OpenAI SDK
+El proyecto utiliza el SDK oficial de OpenAI. La configuración se encuentra en `config/openai.config.ts`. Puedes ajustar los parámetros del modelo según tus necesidades:
 
-## Learn More
+```typescript
+// Ejemplo de configuración
+export const openAIConfig = {
+  model: "gpt-3.5-turbo",
+  temperature: 0.7,
+  max_tokens: 500
+};
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Personalización
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Puedes personalizar el chatbot modificando:
+- Los estilos en `app/globals.css`
+- Los componentes del chat en `components/chat-assistant`
+- La lógica de la API en `app/api/open-ai/route.ts`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📚 Recursos Útiles
 
-## Deploy on Vercel
+- [Documentación de OpenAI](https://platform.openai.com/docs)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Bun Documentation](https://bun.sh/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Shadcn/ui Components](https://ui.shadcn.com)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contribuir
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para sugerencias y mejoras.
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
