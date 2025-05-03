@@ -2,6 +2,8 @@ import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
 import { inter } from "@/lib/fonts"
+import Chatbot from "@/components/chat-assistant/chat-assistant"
+import { ReactQueryClientProvider } from "@/providers/query-provider"
 
 
 export const metadata: Metadata = {
@@ -15,8 +17,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ReactQueryClientProvider>
+      <html lang="es">
+        <body className={inter.className}>
+          {children}
+          <Chatbot />
+        </body>
+      </html>
+    </ReactQueryClientProvider>
   )
 }
