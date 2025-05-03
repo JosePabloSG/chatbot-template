@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogFooter } from "@/components/ui/dialog";
 import { Card } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"; // Importar Alert
 import Image from "next/image";
-import { MessageCircle, AlertCircle } from "lucide-react";
+import { MessageCircle, AlertCircle, Sparkles } from "lucide-react";
 import ChatMessages, { ChatMessage } from "./components/messages";
 import { useChatbot } from "@/hooks/use-chat-bot";
 import ChatHeader from "./components/header";
@@ -180,7 +180,7 @@ export default function Chatbot() {
               <article className="flex flex-col items-center justify-center h-full text-center">
                 <div className="mb-8">
                   <figure className="inline-flex items-center justify-center w-12 h-12 mb-4">
-                    <Image src="/Spark.svg" alt="" width={24} height={24} aria-hidden="true" />
+                    <Sparkles height={48} width={48} className="text-muted-foreground" />
                   </figure>
                   <h2 className="text-xl font-semibold mb-2">
                     Pregúntale cualquier cosa a nuestra IA
