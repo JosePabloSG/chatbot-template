@@ -2,6 +2,10 @@
 
 Una plantilla moderna y fácil de usar para crear tu propio chatbot utilizando Next.js 14, OpenAI y Bun.
 
+## 🖼️ Vista Previa
+
+![Vista previa del chatbot](/public/picture.png)
+
 ## ✨ Características
 
 - 🚀 Next.js 15 con App Router

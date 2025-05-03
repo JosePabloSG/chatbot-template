@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ExternalLink, MessageSquare } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import Image from "next/image"
 
 export default function Home() {
   return (
@@ -59,6 +60,18 @@ export default function Home() {
               >
                 Obtener API Key de OpenAI
                 <ExternalLink className="w-4 h-4" />
+              </Link>
+            </Button>
+
+            <Button asChild variant="outline" className="border-gray-600 text-gray-600 hover:bg-gray-50">
+              <Link
+                href="https://github.com/JosePabloSG/chatbot-template"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Image src="/github.svg" alt="GitHub" width={20} height={20} />
+                Ver en GitHub
               </Link>
             </Button>
           </div>
