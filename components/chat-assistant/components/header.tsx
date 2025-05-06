@@ -21,14 +21,14 @@ export default function ChatHeader({ isExpanded, onDownload, onToggleExpand, onC
     <DialogHeader>
       <header className="flex flex-row items-center justify-between w-full">
         <div className="flex items-center gap-2">
-          <Avatar className="w-12 h-12 p-1">
-            <AvatarImage src="/NandaAI.svg" alt="" aria-hidden="true" />
+          <Avatar className="w-12 h-12 p-1 bg-gray-800">
+            <AvatarImage src="/logos/valibot.svg" alt="" aria-hidden="true" />
             <AvatarFallback>IA</AvatarFallback>
           </Avatar>
           <div className="flex flex-col">
-            <DialogTitle className="pt-2">Chat bot</DialogTitle>
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <div className="w-2 h-2 rounded-full bg-green-500"></div>
+            <DialogTitle className="pt-2 text-white">Chat bot</DialogTitle>
+            <div className="flex items-center gap-1.5 text-xs text-gray-400">
+              <div className="w-2 h-2 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400"></div>
               <span>Activa</span>
             </div>
           </div>
@@ -36,12 +36,12 @@ export default function ChatHeader({ isExpanded, onDownload, onToggleExpand, onC
         <nav aria-label="Opciones del chat" className="flex items-center gap-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Más opciones">
-                <Ellipsis className="h-4 w-4 cursor-pointer" />
+              <Button variant="ghost" size="icon" aria-label="Más opciones" className="hover:bg-gray-800/50">
+                <Ellipsis className="h-4 w-4 cursor-pointer text-gray-400" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="rounded-2xl">
-              <DropdownMenuItem onClick={onDownload} className="cursor-pointer" >
+            <DropdownMenuContent align="end" className="rounded-2xl bg-gray-900 border-gray-800">
+              <DropdownMenuItem onClick={onDownload} className="cursor-pointer text-gray-300 hover:bg-gray-800" >
                 <Download className="h-4 w-4 mr-2" />
                 Descargar conversación
               </DropdownMenuItem>
@@ -53,23 +53,24 @@ export default function ChatHeader({ isExpanded, onDownload, onToggleExpand, onC
               size="icon"
               aria-label={isExpanded ? "Minimizar chat" : "Expandir chat"}
               onClick={onToggleExpand}
-              className="cursor-pointer"
+              className="cursor-pointer hover:bg-gray-800/50"
             >
               {isExpanded ? (
-                <Minimize2 className="h-4 w-4" />
+                <Minimize2 className="h-4 w-4 text-gray-400" />
               ) : (
-                <Maximize2 className="h-4 w-4" />
+                <Maximize2 className="h-4 w-4 text-gray-400" />
               )}
             </Button>
           </div>
           <div className="block sm:hidden">
             <Button
-              variant={'ghost'}
-              size={'icon'}
+              variant="ghost"
+              size="icon"
               aria-label="Cerrar chat"
               onClick={onClose}
+              className="hover:bg-gray-800/50"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4 text-gray-400" />
             </Button>
           </div>
         </nav>

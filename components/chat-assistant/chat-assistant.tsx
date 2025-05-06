@@ -123,10 +123,10 @@ export default function Chatbot() {
       <section aria-label="Chatbot" className="fixed bottom-4 right-4">
         <Button
           aria-label="Abrir chat"
-          className="relative rounded-full w-12 h-12 shadow-xs cursor-pointer"
+          className="relative rounded-full w-12 h-12 shadow-lg bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-600 hover:to-cyan-600 cursor-pointer transition-all duration-200"
           onClick={() => setIsOpen(true)}
         >
-          <MessageCircle className="w-6 h-6" />
+          <MessageCircle className="w-6 h-6 text-primary-foreground" />
         </Button>
       </section>
 
@@ -135,7 +135,7 @@ export default function Chatbot() {
           className={`${isExpanded
             ? "sm:max-w-[700px] md:max-w-[800px] lg:max-w-[900px] w-[90vw] shadow-none"
             : "w-full mr-0 mb-0 sm:w-[72vw] sm:mr-4 sm:mb-4 sm:max-w-[480px] md:max-w-[560px] lg:max-w-[640px] shadow-none"
-            } rounded-2xl !right-4 !left-auto !translate-x-0 transition-all duration-300 origin-right`}
+            } rounded-2xl !right-4 !left-auto !translate-x-0 transition-all duration-300 origin-right bg-gray-950 text-white border-gray-800`}
           hideCloseButton
         >
           <ChatHeader
@@ -145,7 +145,7 @@ export default function Chatbot() {
             onToggleExpand={() => setIsExpanded(!isExpanded)}
           />
 
-          <Card className="h-[60vh] overflow-y-auto p-4 space-y-4 shadow-none border-0 hide-scrollbar">
+          <Card className="h-[60vh] overflow-y-auto p-4 space-y-4 shadow-none border-0 hide-scrollbar bg-gray-900/30">
             {messages.length > 0 || isTyping ? (
               <>
                 <ChatMessages messages={messages} messageVariants={messageVariants} />
@@ -159,11 +159,11 @@ export default function Chatbot() {
                     exit="hidden"
                     variants={messageVariants}
                   >
-                    <div className="bg-muted p-3 rounded-2xl flex space-x-1">
+                    <div className="bg-gray-800/50 p-3 rounded-2xl flex space-x-1">
                       {[0, 1, 2].map((i) => (
                         <motion.div
                           key={i}
-                          className="w-2 h-2 bg-[#4caf50] rounded-full"
+                          className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full"
                           animate={{ y: ["0%", "-50%", "0%"] }}
                           transition={{
                             duration: 0.6,
@@ -180,7 +180,21 @@ export default function Chatbot() {
               <article className="flex flex-col items-center justify-center h-full text-center">
                 <div className="mb-8">
                   <figure className="inline-flex items-center justify-center w-12 h-12 mb-4">
-                    <Sparkles height={48} width={48} className="text-muted-foreground" />
+                    <Sparkles
+                      height={48}
+                      width={48}
+                      className="text-transparent"
+                      style={{
+                        stroke: 'url(#sparkles-gradient)',
+                        strokeWidth: 1.5
+                      }}
+                    />
+                    <svg width="0" height="0">
+                      <linearGradient id="sparkles-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop stopColor="#34d399" offset="0%" />
+                        <stop stopColor="#22d3ee" offset="100%" />
+                      </linearGradient>
+                    </svg>
                   </figure>
                   <h2 className="text-xl font-semibold mb-2">
                     Pregúntale cualquier cosa a nuestra IA
