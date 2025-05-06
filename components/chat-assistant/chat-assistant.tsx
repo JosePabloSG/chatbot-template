@@ -16,6 +16,8 @@ import ChatInput from "./components/input";
 
 const FAQ_QUESTIONS = [
   "¿Qué puedo preguntarte?",
+  "¿Cuáles son los tipos de wallets y cuál es más seguro?",
+  "¿Qué es DeFi y cómo funciona?"
 ];
 
 export default function Chatbot() {

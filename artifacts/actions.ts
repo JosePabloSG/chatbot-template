@@ -9,7 +9,7 @@ const openai = createOpenAI({
 export async function generateResponse(prompt: string): Promise<string> {
   try {
     const { text } = await generateText({
-      model: openai('gpt-4o-mini'),
+      model: openai('gpt-4.1-mini-2025-04-14'),
       prompt: `${CHAT_CONTEXT}\n\nUsuario: ${prompt}`,
     });
 
